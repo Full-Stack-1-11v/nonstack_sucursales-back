@@ -6,7 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.perfulandia.cl.microservicio_sucursales.model.Ciudad;
+import com.perfulandia.cl.microservicio_sucursales.model.Region;
 import com.perfulandia.cl.microservicio_sucursales.repository.CiudadRepository;
+import com.perfulandia.cl.microservicio_sucursales.repository.RegionRepository;
 
 
 
@@ -17,6 +19,9 @@ public class CiudadService {
 
     @Autowired
     private CiudadRepository ciudadRepository;
+
+    @Autowired
+    private RegionRepository regionRepository;
 
     @Autowired
     private RegionService regionService;
@@ -30,7 +35,11 @@ public class CiudadService {
     }
 
     public Ciudad createCiudad(Ciudad ciudad) {
-        return ciudadRepository.save(ciudad);
+    Integer idRegion = ciudad.getRegion().getIdRegion();
+    Region region = regionRepository.findById(idRegion)
+        .orElseThrow(() -> new RuntimeException("Región no encontrada"));
+    ciudad.setRegion(region);
+    return ciudadRepository.save(ciudad);
     }
 
     public Ciudad createCiudadByRegion(Integer idRegion, Ciudad ciudad) {

@@ -16,13 +16,15 @@ public interface RegionRepository extends JpaRepository<Region, Integer> {
     //buscar region por su nombre
     public Region findByNombreRegion(String nombreRegion);
 
+    public Region findByIdRegion(Integer idRegion);
+
   
 
     @Query("SELECT r FROM Region r WHERE r.nombreRegion = :nombreRegion")
     List<Region> findByNombreTest(@Param("nombreRegion") String nombreRegion);
 
     @Query("SELECT r FROM Region r WHERE r.idRegion = :idRegion")
-    Optional<Region> findByIdRegion(@Param("idRegion") Integer idRegion);
+    Optional<Region> findByRegionIdOptional(@Param("idRegion") Integer idRegion);
 
     @Query("SELECT r FROM Region r")
     List<Region> findAllRegions();
