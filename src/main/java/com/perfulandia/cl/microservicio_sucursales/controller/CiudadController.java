@@ -18,7 +18,7 @@ import com.perfulandia.cl.microservicio_sucursales.service.CiudadService;
 
 
 @RestController
-@RequestMapping("ciudades")
+@RequestMapping("/ciudades")
 public class CiudadController {
 
     @Autowired
