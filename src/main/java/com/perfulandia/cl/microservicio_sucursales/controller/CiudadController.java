@@ -34,14 +34,12 @@ public class CiudadController {
     }
 
     //Listar ciudades por region
-    @GetMapping("/{idCiudad}")
-    public ResponseEntity<List<Ciudad>> ObtenerCiudadPorRegion(@PathVariable Integer idRegion) {
+    @GetMapping("/region/{idRegion}")
+    public ResponseEntity<List<Ciudad>> listarCiudadesPorRegion(@PathVariable Integer idRegion) {
         List<Ciudad> ciudades = ciudadService.getCiudadesByRegionId(idRegion);
-
-        if (ciudades == null || ciudades.isEmpty()) {
+        if (ciudades.isEmpty()) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         }
-
         return ResponseEntity.ok(ciudades);
     }
 
