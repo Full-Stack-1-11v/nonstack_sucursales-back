@@ -28,6 +28,6 @@ public class Sucursal {
     private String nombreSucursal;
 
     @ManyToOne
-    @JoinColumn(name = "ciudad", nullable = false)
+    @JoinColumn(name = "id_ciudad", nullable = false)
     private Ciudad ciudad;
 }

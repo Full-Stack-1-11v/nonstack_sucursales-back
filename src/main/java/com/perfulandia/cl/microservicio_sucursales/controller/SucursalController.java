@@ -25,9 +25,13 @@ public class SucursalController {
     @Autowired
     private SucursalService sucursalService;
 
+    
+
+
+
     // Crear una nueva sucursal
-    @PostMapping
-    public ResponseEntity<Sucursal> crearSucursal(@RequestBody Sucursal sucursal) {
+    @PostMapping("/crear")
+    public ResponseEntity<Sucursal> crearrSucursal(@RequestBody Sucursal sucursal) {
         Sucursal nuevaSucursal = sucursalService.createSucursal(sucursal);
         return ResponseEntity.status(HttpStatus.CREATED).body(nuevaSucursal);
     }
