@@ -7,8 +7,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -48,6 +50,26 @@ public class CiudadController {
     public ResponseEntity<Ciudad> crearCiudad(@RequestBody Ciudad ciudad) {
         Ciudad nuevaCiudad = ciudadService.createCiudad(ciudad);
         return ResponseEntity.status(HttpStatus.CREATED).body(nuevaCiudad);
+    }
+
+    //Actualizar una ciudad
+    @PutMapping("/{idCiudad}")
+    public ResponseEntity<Ciudad> actualizarCiudad(@PathVariable Integer idCiudad, @RequestBody Ciudad ciudad) {
+        Ciudad ciudadActualizada = ciudadService.updateCiudad(idCiudad, ciudad);
+        if (ciudadActualizada != null) {
+            return ResponseEntity.ok(ciudadActualizada);
+        }
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+    }
+
+    //actualizar una ciudad parcialmente
+    @PatchMapping("/{idCiudad}/parcial")
+    public ResponseEntity<Ciudad> actualizarCiudadParcial(@PathVariable Integer idCiudad, @RequestBody Ciudad ciudad) {
+        Ciudad ciudadActualizada = ciudadService.updateCiudad(idCiudad, ciudad);
+        if (ciudadActualizada != null) {
+            return ResponseEntity.ok(ciudadActualizada);
+        }
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
     }
 
     //crear una nueva ciudad por region
