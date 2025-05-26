@@ -63,7 +63,7 @@ public class CiudadController {
     }
 
     //actualizar una ciudad parcialmente
-    @PatchMapping("/{idCiudad}/parcial")
+    @PatchMapping("/{idCiudad}")
     public ResponseEntity<Ciudad> actualizarCiudadParcial(@PathVariable Integer idCiudad, @RequestBody Ciudad ciudad) {
         Ciudad ciudadActualizada = ciudadService.updateCiudad(idCiudad, ciudad);
         if (ciudadActualizada != null) {
