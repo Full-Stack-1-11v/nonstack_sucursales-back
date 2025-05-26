@@ -32,9 +32,9 @@ public class CiudadController {
     }
 
     //Listar ciudades por region
-    @GetMapping("/{id_ciudad}")
-    public ResponseEntity<List<Ciudad>> ObtenerCiudadPorRegion(@PathVariable Integer id_region) {
-        List<Ciudad> ciudades = ciudadService.getCiudadesByRegionId(id_region);
+    @GetMapping("/{idCiudad}")
+    public ResponseEntity<List<Ciudad>> ObtenerCiudadPorRegion(@PathVariable Integer idRegion) {
+        List<Ciudad> ciudades = ciudadService.getCiudadesByRegionId(idRegion);
 
         if (ciudades == null || ciudades.isEmpty()) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
@@ -51,18 +51,18 @@ public class CiudadController {
     }
 
     //crear una nueva ciudad por region
-    @PostMapping("/{id_region}")
-    public ResponseEntity<Ciudad> crearCiudadPorRegion(@PathVariable Integer id_region, @RequestBody Ciudad ciudad) {
-        Ciudad nuevaCiudad = ciudadService.createCiudadByRegion(id_region, ciudad);
+    @PostMapping("/{idRegion}")
+    public ResponseEntity<Ciudad> crearCiudadPorRegion(@PathVariable Integer idRegion, @RequestBody Ciudad ciudad) {
+        Ciudad nuevaCiudad = ciudadService.createCiudadByRegion(idRegion, ciudad);
         if (nuevaCiudad == null) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         }
         return ResponseEntity.status(HttpStatus.CREATED).body(nuevaCiudad);
     }
 
-    @DeleteMapping("/{id_ciudad}")
-    public ResponseEntity<Void> eliminarCiudad(@PathVariable Integer id_ciudad) {
-        ciudadService.deleteCiudad(id_ciudad);
+    @DeleteMapping("/{idCiudad}")
+    public ResponseEntity<Void> eliminarCiudad(@PathVariable Integer idCiudad) {
+        ciudadService.deleteCiudad(idCiudad);
         return ResponseEntity.noContent().build();
     }
 

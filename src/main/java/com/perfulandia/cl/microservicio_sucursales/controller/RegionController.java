@@ -31,9 +31,9 @@ public class RegionController {
         return ResponseEntity.ok(regiones);
     }
 
-    @GetMapping("/{id_region}")
-    public ResponseEntity<Region> obtenerRegionPorId(@PathVariable Integer id_region) {
-        Region region = regionService.getRegionById(id_region);
+    @GetMapping("/{idRegion}")
+    public ResponseEntity<Region> obtenerRegionPorId(@PathVariable Integer idRegion) {
+        Region region = regionService.getRegionById(idRegion);
         if (region != null) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         } 
@@ -47,9 +47,9 @@ public class RegionController {
         return ResponseEntity.status(HttpStatus.CREATED).body(nuevaRegion);
     }
 
-    @PutMapping("/{id_region}")
-    public ResponseEntity<Region> actualizarRegion(@PathVariable Integer id_region, @RequestBody Region region) {
-        Region regionActualizada = regionService.updateRegion(id_region, region);
+    @PutMapping("/{idRegion}")
+    public ResponseEntity<Region> actualizarRegion(@PathVariable Integer idRegion, @RequestBody Region region) {
+        Region regionActualizada = regionService.updateRegion(idRegion, region);
         if (regionActualizada == null) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         }
@@ -57,36 +57,36 @@ public class RegionController {
     }
 
 
-    @PatchMapping("/{id_region}")
-    public ResponseEntity<Region> actualizarRegionParcial(@PathVariable Integer id_region, @RequestBody Region region) {
-        Region regionActualizada = regionService.patchRegion(id_region, region);
+    @PatchMapping("/{idRegion}")
+    public ResponseEntity<Region> actualizarRegionParcial(@PathVariable Integer idRegion, @RequestBody Region region) {
+        Region regionActualizada = regionService.patchRegion(idRegion, region);
         if (regionActualizada == null) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         }
         return ResponseEntity.ok(regionActualizada);
     }
 
-    @DeleteMapping("/{id_region}")
-    public ResponseEntity<Void> eliminarRegion(@PathVariable Integer id_region) {
-        if (regionService.getRegionById(id_region) == null) {
+    @DeleteMapping("/{idRegion}")
+    public ResponseEntity<Void> eliminarRegion(@PathVariable Integer idRegion) {
+        if (regionService.getRegionById(idRegion) == null) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         }
-        regionService.deleteById(id_region);
+        regionService.deleteById(idRegion);
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
 
-    @GetMapping("/buscar/jpql/{nombre_region}")
-    public ResponseEntity<List<Region>> buscarRegionPorNombre(@PathVariable String nombre_region) {
-        List<Region> regiones = regionService.buscarRegionPorNombreJPQL(nombre_region);
+    @GetMapping("/buscar/jpql/{nombreRegion}")
+    public ResponseEntity<List<Region>> buscarRegionPorNombre(@PathVariable String nombreRegion) {
+        List<Region> regiones = regionService.buscarRegionPorNombreJPQL(nombreRegion);
         if (regiones.isEmpty()) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         }
         return ResponseEntity.ok(regiones);
     }
 
-    @GetMapping("/buscar/native/{nombre_region}")
-    public ResponseEntity<List<Region>> buscarRegionPorNombreNative(@PathVariable String nombre_region) {
-        List<Region> regiones = regionService.buscarRegionPorNombreNative(nombre_region);
+    @GetMapping("/buscar/native/{nombreRegion}")
+    public ResponseEntity<List<Region>> buscarRegionPorNombreNative(@PathVariable String nombreRegion) {
+        List<Region> regiones = regionService.buscarRegionPorNombreNative(nombreRegion);
         if (regiones.isEmpty()) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         }

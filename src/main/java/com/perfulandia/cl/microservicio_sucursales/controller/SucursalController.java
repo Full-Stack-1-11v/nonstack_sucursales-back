@@ -40,19 +40,19 @@ public class SucursalController {
     }
 
     // Obtener una sucursal por su ID
-    @GetMapping("/{id_sucursal}")
-    public ResponseEntity<Sucursal> obtenerSucursalPorId(@PathVariable Integer id_sucursal) {
-        Sucursal sucursal = sucursalService.getSucursalById(id_sucursal).orElse(null);
+    @GetMapping("/{idSucursal}")
+    public ResponseEntity<Sucursal> obtenerSucursalPorId(@PathVariable Integer idSucursal) {
+        Sucursal sucursal = sucursalService.getSucursalById(idSucursal).orElse(null);
         if (sucursal != null) {
             return ResponseEntity.ok(sucursal);
         }
         return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
     }
 
-    // Actualizar una sucursal 
-    @PutMapping("/{id_sucursal}")
-    public ResponseEntity<Sucursal> actualizarSucursal(@PathVariable Integer id_sucursal, @RequestBody Sucursal sucursal) {
-        Sucursal sucursalActualizada = sucursalService.updateSucursal(id_sucursal, sucursal);
+    // Actualizar una sucursal
+    @PutMapping("/{idSucursal}")
+    public ResponseEntity<Sucursal> actualizarSucursal(@PathVariable Integer idSucursal, @RequestBody Sucursal sucursal) {
+        Sucursal sucursalActualizada = sucursalService.updateSucursal(idSucursal, sucursal);
         if (sucursalActualizada != null) {
             return ResponseEntity.ok(sucursalActualizada);
         }
@@ -60,10 +60,10 @@ public class SucursalController {
     }
 
     // Eliminar una sucursal
-    @DeleteMapping("/{id_sucursal}")
-    public ResponseEntity<Void> eliminarSucursal(@PathVariable Integer id_sucursal) {
-        if (sucursalService.getSucursalById(id_sucursal).isPresent()) {
-            sucursalService.eliminarSucursal(id_sucursal);
+    @DeleteMapping("/{idSucursal}")
+    public ResponseEntity<Void> eliminarSucursal(@PathVariable Integer idSucursal) {
+        if (sucursalService.getSucursalById(idSucursal).isPresent()) {
+            sucursalService.eliminarSucursal(idSucursal);
             return ResponseEntity.noContent().build();
         }
         return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
