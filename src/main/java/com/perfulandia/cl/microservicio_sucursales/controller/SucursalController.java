@@ -19,7 +19,7 @@ import com.perfulandia.cl.microservicio_sucursales.service.SucursalService;
 
 
 @RestController
-@RequestMapping("/sucursales")
+@RequestMapping("/api/v1/sucursales")
 public class SucursalController {
 
     @Autowired
@@ -40,7 +40,7 @@ public class SucursalController {
     }
 
     // Obtener una sucursal por su ID
-    @GetMapping("/sucursales/{id_sucursal}")
+    @GetMapping("/{id_sucursal}")
     public ResponseEntity<Sucursal> obtenerSucursalPorId(@PathVariable Integer id_sucursal) {
         Sucursal sucursal = sucursalService.getSucursalById(id_sucursal).orElse(null);
         if (sucursal != null) {

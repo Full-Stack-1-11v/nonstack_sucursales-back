@@ -19,6 +19,7 @@ import lombok.NoArgsConstructor;
 public class Region {
 
     @Id
+    @Column(name = "id_region")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idRegion;
 

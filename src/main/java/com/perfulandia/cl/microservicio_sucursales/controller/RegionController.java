@@ -19,7 +19,7 @@ import com.perfulandia.cl.microservicio_sucursales.model.Region;
 import com.perfulandia.cl.microservicio_sucursales.service.RegionService;
 
 @RestController
-@RequestMapping("/regiones")
+@RequestMapping("/api/v1/sucursales/regiones")
 public class RegionController {
 
     @Autowired

@@ -18,7 +18,7 @@ import com.perfulandia.cl.microservicio_sucursales.service.CiudadService;
 
 
 @RestController
-@RequestMapping("/ciudades")
+@RequestMapping("/api/v1/sucursales/ciudades")
 public class CiudadController {
 
     @Autowired
@@ -32,7 +32,7 @@ public class CiudadController {
     }
 
     //Listar ciudades por region
-    @GetMapping("/ciudades/{id_ciudad}")
+    @GetMapping("/{id_ciudad}")
     public ResponseEntity<List<Ciudad>> ObtenerCiudadPorRegion(@PathVariable Integer id_region) {
         List<Ciudad> ciudades = ciudadService.getCiudadesByRegionId(id_region);
 
@@ -51,7 +51,7 @@ public class CiudadController {
     }
 
     //crear una nueva ciudad por region
-    @PostMapping("/ciudades/{id_region}")
+    @PostMapping("/{id_region}")
     public ResponseEntity<Ciudad> crearCiudadPorRegion(@PathVariable Integer id_region, @RequestBody Ciudad ciudad) {
         Ciudad nuevaCiudad = ciudadService.createCiudadByRegion(id_region, ciudad);
         if (nuevaCiudad == null) {

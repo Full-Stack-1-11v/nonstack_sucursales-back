@@ -20,6 +20,7 @@ import lombok.NoArgsConstructor;
 public class Sucursal {
 
     @Id
+    @Column(name = "id_sucursal")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idSucursal;
 

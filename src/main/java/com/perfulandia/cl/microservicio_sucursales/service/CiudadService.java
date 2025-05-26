@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 
 import com.perfulandia.cl.microservicio_sucursales.model.Ciudad;
 import com.perfulandia.cl.microservicio_sucursales.repository.CiudadRepository;
-import com.perfulandia.cl.microservicio_sucursales.repository.RegionRepository;
 
 
 
@@ -19,8 +18,6 @@ public class CiudadService {
     @Autowired
     private CiudadRepository ciudadRepository;
 
-    @Autowired
-    private RegionRepository regionRepository;
 
     @Autowired
     private RegionService regionService;
