@@ -18,13 +18,13 @@ public interface CiudadRepository extends JpaRepository<Ciudad, Integer> {
 
     public List<Ciudad> findByRegionIdRegion(Integer idRegion);
 
-    @Query("SELECT c FROM Ciudad c WHERE c.nombreCiudad = :nombreCiudad")
+    @Query(value= "SELECT * FROM Ciudad c WHERE c.nombreCiudad = :nombreCiudad", nativeQuery = true)
     List<Ciudad> findByNombreTest(@Param("nombreCiudad") String nombreCiudad);
 
-    @Query("SELECT c FROM Ciudad c WHERE c.idCiudad = :idCiudad")
+    @Query(value= "SELECT * FROM Ciudad c WHERE c.idCiudad = :idCiudad", nativeQuery = true)
     Optional<Ciudad> findByIdCiudad(@Param("idCiudad") Integer idCiudad);
 
-    @Query("SELECT c FROM Ciudad c")
+    @Query(value= "SELECT * FROM Ciudad c", nativeQuery = true)
     List<Ciudad> findAllCiudades();
 
 }
