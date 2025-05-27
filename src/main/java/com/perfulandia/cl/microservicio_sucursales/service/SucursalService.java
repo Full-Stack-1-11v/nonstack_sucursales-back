@@ -6,10 +6,9 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.perfulandia.cl.microservicio_sucursales.model.Ciudad;
 import com.perfulandia.cl.microservicio_sucursales.model.Sucursal;
 import com.perfulandia.cl.microservicio_sucursales.repository.SucursalRepository;
-import com.perfulandia.cl.microservicio_sucursales.repository.CiudadRepository;
+
 
 @Service    
 public class SucursalService {
@@ -18,16 +17,9 @@ public class SucursalService {
     @Autowired
     private SucursalRepository sucursalRepository;
 
-   
-
-
-    
-    
 
     @Autowired
     private CiudadService ciudadService;
-
-   
 
 
     // Método para guardar una nueva sucursal demo
