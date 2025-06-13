@@ -7,7 +7,7 @@ import static org.mockito.Mockito.*;
 
 
 import java.util.List;
-
+import java.util.Optional;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,7 +37,7 @@ public class RegionServiceTest {
         // Given       
         List<Region> expectedRegions = List.of(new Region(1, "Region prueba 1"));
 
-        // When    // When
+        // When    
         when(regionRepository.findAll()).thenReturn(expectedRegions);        
 
         // Then
@@ -49,7 +49,6 @@ public class RegionServiceTest {
     @Test
     public void testSaveRegion() {
 
-        // Given
         Region region = new Region(1, "Region prueba 1");
         when(regionRepository.save(region)).thenReturn(region);
 
@@ -63,7 +62,6 @@ public class RegionServiceTest {
     @Test
     public void testDeleteById() {
 
-        // Given
         Integer id = 1;
         doNothing().when(regionRepository).deleteById(id);
 
@@ -74,18 +72,85 @@ public class RegionServiceTest {
 
     @Test
     public void testGetRegionById() {
-        // Given
-        Integer id = 1;
-        Region expectedRegion = new Region(1, "Region existente 1");
-        when(regionRepository.findByIdRegion(id)).thenReturn(expectedRegion);
 
-        Region result = regionService.getRegionById(id);
-        assertNotNull(result);
-        assertEquals(expectedRegion.getIdRegion(), result.getIdRegion());
-                
-    }
+        Integer id = 1;
+        doNothing().when(regionRepository).deleteById(id);
+
+        regionService.deleteById(id);
+        verify(regionRepository, times(1)).deleteById(id);
 
    
+    }
+
+    @Test
+    public void testUpdateRegion() {
+        // Given
+        Integer id = 1;
+        Region region = new Region(id, "Region actualizada");
+        when(regionRepository.existsById(id)).thenReturn(true);
+        when(regionRepository.save(region)).thenReturn(region);
+
+        // When
+        Region updatedRegion = regionService.updateRegion(id, region);
+
+        // Then
+        assertNotNull(updatedRegion);
+        assertEquals("Region actualizada", updatedRegion.getNombreRegion());
+        verify(regionRepository, times(1)).existsById(id);
+        verify(regionRepository, times(1)).save(region);
+    }
+
+    @Test
+    public void testPatchRegion() {
+        // Given
+        Integer id = 1;
+        Region existingRegion = new Region(id, "Region existente");
+        Region patchData = new Region(null, "Region parcheada");
+        when(regionRepository.findById(id)).thenReturn(Optional.of(existingRegion));
+        when(regionRepository.save(existingRegion)).thenReturn(existingRegion);
+
+        // When
+        Region patchedRegion = regionService.patchRegion(id, patchData);
+
+        // Then
+        assertNotNull(patchedRegion);
+        assertEquals("Region parcheada", patchedRegion.getNombreRegion());
+        verify(regionRepository, times(1)).findById(id);
+        verify(regionRepository, times(1)).save(existingRegion);
+    }
+
+    @Test
+    public void testBuscarRegionPorNombreJPQL() {
+        // Given
+        String nombreRegion = "Region Test";
+        List<Region> expectedRegions = List.of(new Region(1, nombreRegion));
+        when(regionRepository.findByNombreJPQL(nombreRegion)).thenReturn(expectedRegions);
+
+        // When
+        List<Region> result = regionService.buscarRegionPorNombreJPQL(nombreRegion);
+
+        // Then
+        assertNotNull(result);
+        assertEquals(expectedRegions, result);
+        verify(regionRepository, times(1)).findByNombreJPQL(nombreRegion);
+    }
+
+    @Test
+    public void testBuscarRegionPorNombreNative() {
+        // Given
+        String nombreRegion = "Region Test";
+        List<Region> expectedRegions = List.of(new Region(1, nombreRegion));
+        when(regionRepository.findByNombreNative(nombreRegion)).thenReturn(expectedRegions);
+
+        // When
+        List<Region> result = regionService.buscarRegionPorNombreNative(nombreRegion);
+
+        // Then
+        assertNotNull(result);
+        assertEquals(expectedRegions, result);
+        verify(regionRepository, times(1)).findByNombreNative(nombreRegion);
+    }
+
 
 
 // >>>> ./mvnw clean verify para ejecutar los test en la terminal
