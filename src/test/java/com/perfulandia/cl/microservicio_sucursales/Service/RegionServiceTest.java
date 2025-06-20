@@ -1,4 +1,4 @@
-package com.perfulandia.cl.microservicio_sucursales.Service;
+package com.perfulandia.cl.microservicio_sucursales.service;
 
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

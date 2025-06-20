@@ -1,4 +1,4 @@
-package com.perfulandia.cl.microservicio_sucursales.Service;
+package com.perfulandia.cl.microservicio_sucursales.service;
 
 
 import java.util.List;
@@ -45,7 +45,7 @@ public class CiudadServiceTest {
     @Test
     public void testGetCiudadById() {
         // Given
-        Ciudad mockCiudad = new Ciudad(1, "Ciudad1", null);
+        Ciudad mockCiudad = new Ciudad(1, "Ciudad prueba 1", null);
         when(ciudadRepository.findById(1)).thenReturn(Optional.of(mockCiudad));
 
         // When
@@ -53,15 +53,15 @@ public class CiudadServiceTest {
 
         // Then
         assertNotNull(ciudad);
-        assertEquals("Ciudad1", ciudad.getNombreCiudad());
+        assertEquals("Ciudad prueba 1", ciudad.getNombreCiudad());
         verify(ciudadRepository, times(1)).findById(1);
     }
 
     @Test
     public void testCreateCiudad() {
         // Given
-        Ciudad mockCiudad = new Ciudad(null, "Ciudad1", null);
-        when(ciudadRepository.save(mockCiudad)).thenReturn(new Ciudad(1, "Ciudad1", null));
+        Ciudad mockCiudad = new Ciudad(null, "Ciudad prueba 1", null);
+        when(ciudadRepository.save(mockCiudad)).thenReturn(new Ciudad(1, "Ciudad prueba 1", null));
 
         // When
         Ciudad ciudad = ciudadService.createCiudad(mockCiudad);
@@ -77,7 +77,7 @@ public class CiudadServiceTest {
     @Test
     public void testUpdateCiudad() {
         // Arrange
-        Ciudad mockCiudad = new Ciudad(1, "Ciudad1", null);
+        Ciudad mockCiudad = new Ciudad(1, "Ciudad prueba 1", null);
         when(ciudadRepository.existsById(1)).thenReturn(true);
         when(ciudadRepository.save(mockCiudad)).thenReturn(mockCiudad);
 
@@ -107,7 +107,7 @@ public class CiudadServiceTest {
     @Test
     public void testGetCiudadesByRegionId() {
         // Arrange
-        List<Ciudad> mockCiudades = List.of(new Ciudad(1, "Ciudad1", null), new Ciudad(2, "Ciudad2", null));
+        List<Ciudad> mockCiudades = List.of(new Ciudad(1, "Ciudad prueba 1", null), new Ciudad(2, "Ciudad2", null));
         when(ciudadRepository.findByRegionIdRegion(1)).thenReturn(mockCiudades);
 
         // Act
