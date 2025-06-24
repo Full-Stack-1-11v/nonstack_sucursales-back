@@ -15,8 +15,17 @@ import com.perfulandia.cl.microservicio_sucursales.assemblers.RegionModelAssembl
 import com.perfulandia.cl.microservicio_sucursales.model.Region;
 import com.perfulandia.cl.microservicio_sucursales.service.RegionService;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import io.swagger.v3.oas.annotations.tags.Tag;
+
 @RestController
 @RequestMapping("/api/v2/regiones")
+@Tag(name = "Regiones V2", description = "Operaciones HATEOAS relacionadas con las regiones")
 public class RegionControllerV2 {
 
     @Autowired
@@ -25,13 +34,29 @@ public class RegionControllerV2 {
     @Autowired
     private RegionModelAssembler assembler;
 
-    @GetMapping("/{id}")
-    public EntityModel<Region> obtenerRegionPorId(@PathVariable Integer idRegion) {
+    @GetMapping("/{idRegion}")
+    @Operation(summary = "Obtener región por ID", description = "Obtiene una región específica por su ID con enlaces HATEOAS")
+    @ApiResponses(value = {
+        @ApiResponse(responseCode = "200", description = "Región encontrada",
+            content = @Content(mediaType = "application/json", schema = @Schema(implementation = Region.class))),
+        @ApiResponse(responseCode = "404", description = "Región no encontrada")
+    })
+    public EntityModel<Region> obtenerRegionPorId(
+        @Parameter(description = "ID de la región a buscar") @PathVariable Integer idRegion) {
         Region region = regionService.getRegionById(idRegion);
         return assembler.toModel(region);
     }
 
     @GetMapping
+    @Operation(
+        summary = "Listar todas las regiones",
+        description = "Obtiene una lista de todas las regiones disponibles con enlaces HATEOAS"
+    )
+    @ApiResponses(value = {
+        @ApiResponse(responseCode = "200", description = "Lista de regiones obtenida exitosamente",
+            content = @Content(mediaType = "application/json", schema = @Schema(implementation = Region.class))),
+        @ApiResponse(responseCode = "404", description = "No se encontraron regiones")
+    })
     public CollectionModel<EntityModel<Region>> listarRegiones() {
         List<EntityModel<Region>> regiones = regionService.getAllRegions()
                 .stream()

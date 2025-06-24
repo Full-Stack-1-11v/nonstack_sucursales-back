@@ -18,37 +18,99 @@ import org.springframework.web.bind.annotation.RestController;
 import com.perfulandia.cl.microservicio_sucursales.model.Region;
 import com.perfulandia.cl.microservicio_sucursales.service.RegionService;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.ExampleObject;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import io.swagger.v3.oas.annotations.tags.Tag;
+
 @RestController
 @RequestMapping("/api/v1/sucursales/regiones")
+@Tag(name = "Regiones", description = "Operaciones relacionadas con las regiones de las sucursales")
 public class RegionController {
 
     @Autowired
     private RegionService regionService;
 
     @GetMapping
+    @Operation(summary = "Listar todas las regiones", description = "Obtiene una lista de todas las regiones disponibles")
+    @ApiResponses(value = {
+        @ApiResponse(responseCode = "200", description = "Lista de regiones obtenida exitosamente",
+            content = @Content(mediaType = "application/json", schema = @Schema(implementation = Region.class))),
+        @ApiResponse(responseCode = "404", description = "No se encontraron regiones")
+    })
     public ResponseEntity<List<Region>> listarRegiones() {
         List<Region> regiones = regionService.getAllRegions();
         return ResponseEntity.ok(regiones);
     }
 
     @GetMapping("/{idRegion}")
-    public ResponseEntity<Region> obtenerRegionPorId(@PathVariable Integer idRegion) {
+    @Operation(summary = "Obtener región por ID", description = "Obtiene una región específica por su ID")
+    @ApiResponses(value = {
+        @ApiResponse(responseCode = "200", description = "Región encontrada",
+            content = @Content(mediaType = "application/json", schema = @Schema(implementation = Region.class))),
+        @ApiResponse(responseCode = "404", description = "Región no encontrada")
+    })
+    public ResponseEntity<Region> obtenerRegionPorId(
+        @Parameter(description = "ID de la región a buscar") @PathVariable Integer idRegion) {
         Region region = regionService.getRegionById(idRegion);
-        if (region != null) {
+        if (region == null) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
-        } 
-        return ResponseEntity.notFound().build();
-        
+        }
+        return ResponseEntity.ok(region);
     }
 
     @PostMapping
-    public ResponseEntity<Region> crearRegion(@RequestBody Region region) {
+    @Operation(summary = "Crear nueva región", description = "Crea una nueva región y la guarda en la base de datos")
+    @ApiResponses(value = {
+        @ApiResponse(responseCode = "201", description = "Región creada exitosamente",
+            content = @Content(mediaType = "application/json", schema = @Schema(implementation = Region.class))),
+        @ApiResponse(responseCode = "400", description = "Solicitud incorrecta")
+    })
+    public ResponseEntity<Region> crearRegion(
+        @io.swagger.v3.oas.annotations.parameters.RequestBody(
+            description = "Objeto Región a crear",
+            required = true,
+            content = @Content(
+                mediaType = "application/json",
+                schema = @Schema(implementation = Region.class),
+                examples = @ExampleObject(
+                    name = "Ejemplo de región",
+                    value = "{ \"nombreRegion\": \"Metropolitana\" }"
+                )
+            )
+        )
+        @RequestBody Region region) {
         Region nuevaRegion = regionService.saveRegion(region);
         return ResponseEntity.status(HttpStatus.CREATED).body(nuevaRegion);
     }
 
     @PutMapping("/{idRegion}")
-    public ResponseEntity<Region> actualizarRegion(@PathVariable Integer idRegion, @RequestBody Region region) {
+    @Operation(summary = "Actualizar región", description = "Actualiza una región existente por su ID")
+    @ApiResponses(value = {
+        @ApiResponse(responseCode = "200", description = "Región actualizada exitosamente",
+            content = @Content(mediaType = "application/json", schema = @Schema(implementation = Region.class))),
+        @ApiResponse(responseCode = "404", description = "Región no encontrada"),
+        @ApiResponse(responseCode = "400", description = "Solicitud incorrecta")
+    })
+    public ResponseEntity<Region> actualizarRegion(
+        @Parameter(description = "ID de la región a actualizar") @PathVariable Integer idRegion,
+        @io.swagger.v3.oas.annotations.parameters.RequestBody(
+            description = "Objeto Región con los datos actualizados",
+            required = true,
+            content = @Content(
+                mediaType = "application/json",
+                schema = @Schema(implementation = Region.class),
+                examples = @ExampleObject(
+                    name = "Ejemplo de actualización",
+                    value = "{ \"nombreRegion\": \"Actualizada\" }"
+                )
+            )
+        )
+        @RequestBody Region region) {
         Region regionActualizada = regionService.updateRegion(idRegion, region);
         if (regionActualizada == null) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
@@ -56,9 +118,29 @@ public class RegionController {
         return ResponseEntity.ok(regionActualizada);
     }
 
-
     @PatchMapping("/{idRegion}")
-    public ResponseEntity<Region> actualizarRegionParcial(@PathVariable Integer idRegion, @RequestBody Region region) {
+    @Operation(summary = "Actualizar parcialmente región", description = "Actualiza parcialmente una región existente por su ID")
+    @ApiResponses(value = {
+        @ApiResponse(responseCode = "200", description = "Región actualizada exitosamente",
+            content = @Content(mediaType = "application/json", schema = @Schema(implementation = Region.class))),
+        @ApiResponse(responseCode = "404", description = "Región no encontrada"),
+        @ApiResponse(responseCode = "400", description = "Solicitud incorrecta")
+    })
+    public ResponseEntity<Region> actualizarRegionParcial(
+        @Parameter(description = "ID de la región a actualizar") @PathVariable Integer idRegion,
+        @io.swagger.v3.oas.annotations.parameters.RequestBody(
+            description = "Objeto Región con los datos a actualizar parcialmente",
+            required = true,
+            content = @Content(
+                mediaType = "application/json",
+                schema = @Schema(implementation = Region.class),
+                examples = @ExampleObject(
+                    name = "Ejemplo de actualización parcial",
+                    value = "{ \"nombreRegion\": \"Parcialmente Actualizada\" }"
+                )
+            )
+        )
+        @RequestBody Region region) {
         Region regionActualizada = regionService.patchRegion(idRegion, region);
         if (regionActualizada == null) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
@@ -67,7 +149,13 @@ public class RegionController {
     }
 
     @DeleteMapping("/{idRegion}")
-    public ResponseEntity<Void> eliminarRegion(@PathVariable Integer idRegion) {
+    @Operation(summary = "Eliminar región", description = "Elimina una región existente por su ID")
+    @ApiResponses(value = {
+        @ApiResponse(responseCode = "204", description = "Región eliminada exitosamente"),
+        @ApiResponse(responseCode = "404", description = "Región no encontrada")
+    })
+    public ResponseEntity<Void> eliminarRegion(
+        @Parameter(description = "ID de la región a eliminar") @PathVariable Integer idRegion) {
         if (regionService.getRegionById(idRegion) == null) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         }
@@ -76,7 +164,14 @@ public class RegionController {
     }
 
     @GetMapping("/buscar/jpql/{nombreRegion}")
-    public ResponseEntity<List<Region>> buscarRegionPorNombre(@PathVariable String nombreRegion) {
+    @Operation(summary = "Buscar región por nombre usando JPQL", description = "Busca regiones por su nombre utilizando JPQL")
+    @ApiResponses(value = {
+        @ApiResponse(responseCode = "200", description = "Regiones encontradas",
+            content = @Content(mediaType = "application/json", schema = @Schema(implementation = Region.class))),
+        @ApiResponse(responseCode = "404", description = "No se encontraron regiones con ese nombre")
+    })
+    public ResponseEntity<List<Region>> buscarRegionPorNombre(
+        @Parameter(description = "Nombre de la región a buscar") @PathVariable String nombreRegion) {
         List<Region> regiones = regionService.buscarRegionPorNombreJPQL(nombreRegion);
         if (regiones.isEmpty()) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
@@ -85,12 +180,18 @@ public class RegionController {
     }
 
     @GetMapping("/buscar/native/{nombreRegion}")
-    public ResponseEntity<List<Region>> buscarRegionPorNombreNative(@PathVariable String nombreRegion) {
+    @Operation(summary = "Buscar región por nombre usando Native Query", description = "Busca regiones por su nombre utilizando una consulta nativa")
+    @ApiResponses(value = {
+        @ApiResponse(responseCode = "200", description = "Regiones encontradas",
+            content = @Content(mediaType = "application/json", schema = @Schema(implementation = Region.class))),
+        @ApiResponse(responseCode = "404", description = "No se encontraron regiones con ese nombre")
+    })
+    public ResponseEntity<List<Region>> buscarRegionPorNombreNative(
+        @Parameter(description = "Nombre de la región a buscar") @PathVariable String nombreRegion) {
         List<Region> regiones = regionService.buscarRegionPorNombreNative(nombreRegion);
         if (regiones.isEmpty()) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         }
         return ResponseEntity.ok(regiones);
     }
-
 }
