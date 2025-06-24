@@ -6,7 +6,6 @@ import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.jupiter.api.Test;
@@ -30,18 +29,18 @@ public class SucursalServiceTest {
     private SucursalRepository sucursalRepository;
 
     @Test
-public void testCreateSucursal() {
-    // Given
-    Sucursal mockSucursal = new Sucursal(null, "Sucursal nueva 1", null);
-    when(sucursalRepository.save(mockSucursal)).thenReturn(new Sucursal(1, "Sucursal nueva 1", null));
+    public void testCreateSucursal() {
+        // Given
+        Sucursal mockSucursal = new Sucursal(null, "Sucursal nueva 1", null);
+        when(sucursalRepository.save(mockSucursal)).thenReturn(new Sucursal(1, "Sucursal nueva 1", null));
 
-    // When
-    Sucursal sucursal = sucursalService.createSucursalByCiudadId(mockSucursal, 1);
+        // When
+        Sucursal sucursal = sucursalService.createSucursalByCiudadId(mockSucursal, 1);
 
-    // Then
-    assertNotNull(sucursal);
-    assertEquals(1, sucursal.getIdSucursal());
-    verify(sucursalRepository, times(1)).save(mockSucursal);
+        // Then
+        assertNotNull(sucursal);
+        assertEquals(1, sucursal.getIdSucursal());
+        verify(sucursalRepository, times(1)).save(mockSucursal);
 
     }
 
@@ -100,6 +99,16 @@ public void testCreateSucursal() {
         verify(sucursalRepository, times(1)).save(mockSucursal);
     }
 
-    
+    @Test
+    public void testDeleteSucursal() {
+        // Given
+        Integer idSucursal = 1;
+        // When
+        sucursalService.eliminarSucursal(idSucursal);
+            
+        // Then
+        verify(sucursalRepository, times(1)).deleteById(idSucursal);
+
+    }
 
 }
