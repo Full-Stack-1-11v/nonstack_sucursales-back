@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.perfulandia.cl.microservicio_sucursales.model.Ciudad;
+import com.perfulandia.cl.microservicio_sucursales.model.Region;
 import com.perfulandia.cl.microservicio_sucursales.repository.CiudadRepository;
 
 
@@ -35,14 +36,12 @@ public class CiudadService {
     }
 
     public Ciudad createCiudadByRegion(Integer idRegion, Ciudad ciudad) {
-        //Verifica si la región existe
-        if (regionService.getRegionById(idRegion) == null) {
+        Region region = regionService.getRegionById(idRegion);
+        if (region == null) {
             return null;
         }
-
         //Asigna la región a la ciudad
-        ciudad.setRegion(regionService.getRegionById(idRegion));
-
+        ciudad.setRegion(region);
         return ciudadRepository.save(ciudad);
     }
 

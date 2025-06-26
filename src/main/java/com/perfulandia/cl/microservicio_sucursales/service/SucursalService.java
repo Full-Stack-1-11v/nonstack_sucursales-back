@@ -21,12 +21,6 @@ public class SucursalService {
     @Autowired
     private CiudadService ciudadService;
 
-
-    // Método para guardar una nueva sucursal demo
-    public Sucursal createSucursalTest(Sucursal sucursal) {
-        return sucursalRepository.save(sucursal);
-    }
-
     // Método para guardar una nueva sucursal
     public Sucursal createSucursal(Sucursal sucursal) {
         if (sucursal.getCiudad() != null && sucursal.getCiudad().getIdCiudad() != null) {

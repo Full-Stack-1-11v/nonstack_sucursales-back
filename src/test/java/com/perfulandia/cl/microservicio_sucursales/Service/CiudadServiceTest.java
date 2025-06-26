@@ -1,21 +1,29 @@
 package com.perfulandia.cl.microservicio_sucursales.service;
 
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
-import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.mockito.Mockito.*;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import org.junit.jupiter.api.Test;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyInt;
+import static org.mockito.Mockito.never;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.ActiveProfiles;
+import org.springframework.test.context.bean.override.mockito.MockitoBean;
+
 import com.perfulandia.cl.microservicio_sucursales.model.Ciudad;
+import com.perfulandia.cl.microservicio_sucursales.model.Region;
 import com.perfulandia.cl.microservicio_sucursales.repository.CiudadRepository;
-import com.perfulandia.cl.microservicio_sucursales.service.CiudadService;
 
 
 @SpringBootTest
@@ -25,8 +33,11 @@ public class CiudadServiceTest {
     @Autowired
     private CiudadService ciudadService;
 
-    @MockBean
+    @MockitoBean
     private CiudadRepository ciudadRepository;
+
+    @MockitoBean
+    private RegionService regionService;
 
     @Test
     public void testGetAllCiudades() {
@@ -58,6 +69,17 @@ public class CiudadServiceTest {
     }
 
     @Test
+    public void testGetCiudadById_noExiste() {
+
+        when(ciudadRepository.findById(99)).thenReturn(Optional.empty());
+
+        Ciudad result = ciudadService.getCiudadById(99);
+
+        assertNull(result);
+        verify(ciudadRepository, times(1)).findById(99);
+    }
+
+    @Test
     public void testCreateCiudad() {
         // Given
         Ciudad mockCiudad = new Ciudad(null, "Ciudad prueba 1", null);
@@ -72,19 +94,39 @@ public class CiudadServiceTest {
         verify(ciudadRepository, times(1)).save(mockCiudad);
     }
 
-    
+    @Test
+    public void testCreateCiudadByRegion() {
+        // Given
+        Region region = new Region(1, "Metropolitana");
+        Ciudad ciudad = new Ciudad(null, "Ciudad con región", null);
+        Ciudad ciudadConRegion = new Ciudad(null, "Ciudad con región", region);
+        Ciudad savedCiudad = new Ciudad(2, "Ciudad con región", region);
+
+        // When
+        when(regionService.getRegionById(1)).thenReturn(region);
+        when(ciudadRepository.save(any(Ciudad.class))).thenReturn(savedCiudad);
+
+        Ciudad result = ciudadService.createCiudadByRegion(1, ciudad);
+        
+        // Then
+        assertNotNull(result);
+        assertEquals(2, result.getIdCiudad());
+        assertEquals(region, result.getRegion());
+        verify(regionService, times(1)).getRegionById(1);
+        verify(ciudadRepository, times(1)).save(any(Ciudad.class));
+    }
 
     @Test
     public void testUpdateCiudad() {
-        // Arrange
+        // Given
         Ciudad mockCiudad = new Ciudad(1, "Ciudad prueba 1", null);
         when(ciudadRepository.existsById(1)).thenReturn(true);
         when(ciudadRepository.save(mockCiudad)).thenReturn(mockCiudad);
 
-        // Act
+        // When
         Ciudad ciudad = ciudadService.updateCiudad(1, mockCiudad);
 
-        // Assert
+        // Then
         assertNotNull(ciudad);
         assertEquals(1, ciudad.getIdCiudad());
         verify(ciudadRepository, times(1)).existsById(1);
@@ -93,30 +135,49 @@ public class CiudadServiceTest {
 
     @Test
     public void testDeleteCiudad() {
-        // Arrange
+        // Given
         when(ciudadRepository.existsById(1)).thenReturn(true);
 
-        // Act
+        // When
         ciudadService.deleteCiudad(1);
 
-        // Assert
+        // Then
         verify(ciudadRepository, times(1)).existsById(1);
         verify(ciudadRepository, times(1)).deleteById(1);
     }
 
     @Test
+    public void testDeleteCiudad_NotFound() {
+        when(ciudadRepository.existsById(99)).thenReturn(false);
+
+        ciudadService.deleteCiudad(99);
+
+        verify(ciudadRepository, times(1)).existsById(99);
+        verify(ciudadRepository, never()).deleteById(anyInt());
+    }
+
+    @Test
     public void testGetCiudadesByRegionId() {
-        // Arrange
+        // Given
         List<Ciudad> mockCiudades = List.of(new Ciudad(1, "Ciudad prueba 1", null), new Ciudad(2, "Ciudad2", null));
         when(ciudadRepository.findByRegionIdRegion(1)).thenReturn(mockCiudades);
 
-        // Act
+        // When
         List<Ciudad> ciudades = ciudadService.getCiudadesByRegionId(1);
 
-        // Assert
+        // Then
         assertEquals(2, ciudades.size());
         verify(ciudadRepository, times(1)).findByRegionIdRegion(1);
     }
 
+    @Test
+    public void testGetCiudadesByRegionId_Empty() {
+        when(ciudadRepository.findByRegionIdRegion(2)).thenReturn(Collections.emptyList());
+
+        List<Ciudad> result = ciudadService.getCiudadesByRegionId(2);
+
+        assertTrue(result.isEmpty());
+        verify(ciudadRepository, times(1)).findByRegionIdRegion(2);
+    }
 
 }

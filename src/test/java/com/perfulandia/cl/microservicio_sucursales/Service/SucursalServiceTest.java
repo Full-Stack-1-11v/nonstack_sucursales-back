@@ -1,20 +1,24 @@
 package com.perfulandia.cl.microservicio_sucursales.service;
 
+import java.util.Collections;
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import org.junit.jupiter.api.Test;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
-
-import java.util.List;
-
-import org.junit.jupiter.api.Test;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.ActiveProfiles;
+import org.springframework.test.context.bean.override.mockito.MockitoBean;
 
+import com.perfulandia.cl.microservicio_sucursales.model.Ciudad;
 import com.perfulandia.cl.microservicio_sucursales.model.Sucursal;
 import com.perfulandia.cl.microservicio_sucursales.repository.SucursalRepository;
 
@@ -25,27 +29,62 @@ public class SucursalServiceTest {
     @Autowired
     private SucursalService sucursalService;
 
-    @MockBean
+    @MockitoBean
     private SucursalRepository sucursalRepository;
 
+    @MockitoBean
+    private CiudadService ciudadService;
+
     @Test
-    public void testCreateSucursal() {
-        // Given
-        Sucursal mockSucursal = new Sucursal(null, "Sucursal nueva 1", null);
-        when(sucursalRepository.save(mockSucursal)).thenReturn(new Sucursal(1, "Sucursal nueva 1", null));
+    void testCreateSucursal() {
+        Ciudad ciudad = new Ciudad(1, "Santiago", null);
+        Sucursal sucursal = new Sucursal(null, "Sucursal Nueva", ciudad);
+        Sucursal created = new Sucursal(1, "Sucursal Nueva", ciudad);
 
-        // When
-        Sucursal sucursal = sucursalService.createSucursalByCiudadId(mockSucursal, 1);
+        when(ciudadService.getCiudadById(1)).thenReturn(ciudad);
+        when(sucursalRepository.save(any(Sucursal.class))).thenReturn(created);
 
-        // Then
-        assertNotNull(sucursal);
-        assertEquals(1, sucursal.getIdSucursal());
-        verify(sucursalRepository, times(1)).save(mockSucursal);
+        Sucursal result = sucursalService.createSucursal(sucursal);
 
+        assertNotNull(result);
+        assertEquals(1, result.getIdSucursal());
+        assertEquals("Sucursal Nueva", result.getNombreSucursal());
+        verify(ciudadService, times(1)).getCiudadById(1);
+        verify(sucursalRepository, times(1)).save(sucursal);
+    }
+    
+    @Test
+    public void testCreateSucursalByCiudadId_CiudadExiste() {
+        Ciudad ciudad = new Ciudad(1, "Santiago", null);
+        Sucursal sucursal = new Sucursal(null, "Sucursal Nueva", null);
+        Sucursal created = new Sucursal(1, "Sucursal Nueva", ciudad);
+
+        when(ciudadService.getCiudadById(1)).thenReturn(ciudad);
+        when(sucursalRepository.save(any(Sucursal.class))).thenReturn(created);
+
+        Sucursal result = sucursalService.createSucursalByCiudadId(sucursal, 1);
+
+        assertNotNull(result);
+        assertEquals(1, result.getIdSucursal());
+        assertEquals("Santiago", result.getCiudad().getNombreCiudad());
+        verify(ciudadService, times(2)).getCiudadById(1); // Se le llama dos veces: una al buscar la ciudad y otra al asignarla a la sucursal
+        verify(sucursalRepository, times(1)).save(sucursal);
     }
 
     @Test
-    public void testGetAllCiudades() {
+    public void testCreateSucursalByCiudadId_CiudadNoExiste() {
+        Sucursal sucursal = new Sucursal(null, "Sucursal Nueva", null);
+        when(ciudadService.getCiudadById(99)).thenReturn(null);
+
+        Sucursal result = sucursalService.createSucursalByCiudadId(sucursal, 99);
+
+        assertNull(result);
+        verify(ciudadService, times(1)).getCiudadById(99);
+        verify(sucursalRepository, never()).save(any());
+    }
+
+    @Test
+    public void testGetAllSucursales() {
 
         // Given
         List<Sucursal> sucursales = List.of( new Sucursal(1, "Sucursal prueba 1", null), 
@@ -62,6 +101,16 @@ public class SucursalServiceTest {
 
         verify(sucursalRepository, times(1)).findAll();
         
+    }
+
+    @Test
+    public void testGetAllSucursales_ListaVacia() {
+        when(sucursalRepository.findAll()).thenReturn(Collections.emptyList());
+
+        List<Sucursal> result = sucursalService.getAllSucursales();
+
+        assertTrue(result.isEmpty());
+        verify(sucursalRepository, times(1)).findAll();
     }
 
     @Test 
@@ -109,6 +158,27 @@ public class SucursalServiceTest {
         // Then
         verify(sucursalRepository, times(1)).deleteById(idSucursal);
 
+    }
+
+    @Test
+    public void testGetSucursalesByCiudadId() {
+        List<Sucursal> sucursales = List.of(new Sucursal(1, "Sucursal 1", null));
+        when(sucursalRepository.findByCiudadIdCiudad(1)).thenReturn(sucursales);
+
+        List<Sucursal> result = sucursalService.getSucursalesByCiudadId(1);
+
+        assertEquals(1, result.size());
+        verify(sucursalRepository, times(1)).findByCiudadIdCiudad(1);
+    }
+
+    @Test
+    public void testGetSucursalesByCiudadId_ListaVacia() {
+        when(sucursalRepository.findByCiudadIdCiudad(2)).thenReturn(Collections.emptyList());
+
+        List<Sucursal> result = sucursalService.getSucursalesByCiudadId(2);
+
+        assertTrue(result.isEmpty());
+        verify(sucursalRepository, times(1)).findByCiudadIdCiudad(2);
     }
 
 }

@@ -1,24 +1,23 @@
 package com.perfulandia.cl.microservicio_sucursales.service;
 
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.mockito.Mockito.*;
-
-
 import java.util.List;
 import java.util.Optional;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 import org.junit.jupiter.api.Test;
+import static org.mockito.Mockito.doNothing;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.ActiveProfiles;
-
+import org.springframework.test.context.bean.override.mockito.MockitoBean;
 
 import com.perfulandia.cl.microservicio_sucursales.model.Region;
 import com.perfulandia.cl.microservicio_sucursales.repository.RegionRepository;
-import com.perfulandia.cl.microservicio_sucursales.service.RegionService;
 
 
 @SpringBootTest
@@ -29,7 +28,7 @@ public class RegionServiceTest {
     @Autowired    
     private RegionService regionService;
 
-    @MockBean   
+    @MockitoBean
     private RegionRepository regionRepository;  
 
     @Test
