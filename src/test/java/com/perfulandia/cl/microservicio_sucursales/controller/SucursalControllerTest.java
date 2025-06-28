@@ -25,16 +25,31 @@ import com.perfulandia.cl.microservicio_sucursales.model.Ciudad;
 import com.perfulandia.cl.microservicio_sucursales.model.Sucursal;
 import com.perfulandia.cl.microservicio_sucursales.service.SucursalService;
 
+/**
+ * Pruebas unitarias para {@link SucursalController}.
+ * <p>
+ * Utiliza {@code @SpringBootTest}, {@code @ActiveProfiles("test")}, {@code @Autowired} y {@code @MockitoBean}
+ * para probar los endpoints principales del controlador, cubriendo casos de éxito y error.
+ */
 @SpringBootTest
 @ActiveProfiles("test")
 public class SucursalControllerTest {
 
+    /**
+     * Controlador de sucursales inyectado para pruebas.
+     */
     @Autowired
     private SucursalController sucursalController;
 
+    /**
+     * Servicio de sucursales mockeado para simular la lógica de negocio.
+     */
     @MockitoBean
     private SucursalService sucursalService;
 
+    /**
+     * Prueba la creación de una sucursal y verifica que la respuesta sea 201 CREATED.
+     */
     @Test
     void testCrearSucursal() {
         Ciudad ciudad = new Ciudad(1, "Santiago", null);
@@ -50,6 +65,9 @@ public class SucursalControllerTest {
         verify(sucursalService, times(1)).createSucursal(sucursal);
     }
 
+    /**
+     * Prueba la obtención de todas las sucursales y verifica que la respuesta sea 200 OK con datos.
+     */
     @Test
     void testListarSucursales() {
         List<Sucursal> sucursales = List.of(
@@ -65,6 +83,9 @@ public class SucursalControllerTest {
         verify(sucursalService, times(1)).getAllSucursales();
     }
 
+    /**
+     * Prueba la obtención de sucursales cuando la lista está vacía y verifica que la respuesta sea 200 OK.
+     */
     @Test
     void testListarSucursales_Vacio() {
         when(sucursalService.getAllSucursales()).thenReturn(Collections.emptyList());
@@ -76,6 +97,9 @@ public class SucursalControllerTest {
         verify(sucursalService, times(1)).getAllSucursales();
     }
 
+    /**
+     * Prueba la obtención de una sucursal por ID existente y verifica que la respuesta sea 200 OK.
+     */
     @Test
     void testObtenerSucursalPorId() {
         Sucursal sucursal = new Sucursal(1, "Sucursal 1", null);
@@ -88,6 +112,9 @@ public class SucursalControllerTest {
         verify(sucursalService, times(1)).getSucursalById(1);
     }
 
+    /**
+     * Prueba la obtención de una sucursal por ID inexistente y verifica que la respuesta sea 404 NOT FOUND.
+     */
     @Test
     void testObtenerSucursalPorId_NotFound() {
         when(sucursalService.getSucursalById(99)).thenReturn(Optional.empty());
@@ -99,6 +126,9 @@ public class SucursalControllerTest {
         verify(sucursalService, times(1)).getSucursalById(99);
     }
 
+    /**
+     * Prueba la actualización de una sucursal existente y verifica que la respuesta sea 200 OK.
+     */
     @Test
     void testActualizarSucursal() {
         Ciudad ciudad = new Ciudad(2, "Valparaíso", null);
@@ -112,6 +142,9 @@ public class SucursalControllerTest {
         verify(sucursalService, times(1)).updateSucursal(1, sucursal);
     }
 
+    /**
+     * Prueba la actualización de una sucursal inexistente y verifica que la respuesta sea 404 NOT FOUND.
+     */
     @Test
     void testActualizarSucursal_NotFound() {
         Ciudad ciudad = new Ciudad(2, "Valparaíso", null);
@@ -125,6 +158,9 @@ public class SucursalControllerTest {
         verify(sucursalService, times(1)).updateSucursal(1, sucursal);
     }
 
+    /**
+     * Prueba la eliminación de una sucursal existente y verifica que la respuesta sea 204 NO CONTENT.
+     */
     @Test
     void testEliminarSucursal() {
         when(sucursalService.getSucursalById(1)).thenReturn(Optional.of(new Sucursal(1, "Sucursal 1", null)));
@@ -137,6 +173,9 @@ public class SucursalControllerTest {
         verify(sucursalService, times(1)).eliminarSucursal(1);
     }
 
+    /**
+     * Prueba la eliminación de una sucursal inexistente y verifica que la respuesta sea 404 NOT FOUND.
+     */
     @Test
     void testEliminarSucursal_NotFound() {
         when(sucursalService.getSucursalById(99)).thenReturn(Optional.empty());
