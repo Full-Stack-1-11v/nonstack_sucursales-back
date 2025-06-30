@@ -24,9 +24,11 @@ import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import io.swagger.v3.oas.annotations.tags.Tag;
 
 
 @RestController
+@Tag(name = "Ciudades", description = "Operaciones relacionadas con las ciudades de las sucursales")
 @RequestMapping("/api/v1/sucursales/ciudades")
 public class CiudadController {
 
