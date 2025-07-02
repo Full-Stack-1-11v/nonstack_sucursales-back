@@ -1,17 +1,24 @@
-2025-06-30T21:10:43.424-04:00  INFO 13628 --- [microservicio-sucursales] [main] .MicroservicioSucursalesApplicationTests : Starting MicroservicioSucursalesApplicationTests using Java 21.0.5 with PID 13628 (started by lucia in C:\Users\lucia\Downloads\unitTestingSucursales\nonstack_sucursales-back-1)
-2025-06-30T21:10:43.430-04:00  INFO 13628 --- [microservicio-sucursales] [main] .MicroservicioSucursalesApplicationTests : No active profile set, falling back to 1 default profile: "default"
-2025-06-30T21:10:44.724-04:00  INFO 13628 --- [microservicio-sucursales] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-06-30T21:10:44.788-04:00  INFO 13628 --- [microservicio-sucursales] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 52 ms. Found 3 JPA repository interfaces.
-2025-06-30T21:10:45.662-04:00  INFO 13628 --- [microservicio-sucursales] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-06-30T21:10:45.736-04:00  INFO 13628 --- [microservicio-sucursales] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.13.Final
-2025-06-30T21:10:45.781-04:00  INFO 13628 --- [microservicio-sucursales] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-06-30T21:10:46.179-04:00  INFO 13628 --- [microservicio-sucursales] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-06-30T21:10:46.203-04:00  INFO 13628 --- [microservicio-sucursales] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-06-30T21:10:47.994-04:00  INFO 13628 --- [microservicio-sucursales] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4e45fbd0
-2025-06-30T21:10:47.997-04:00  INFO 13628 --- [microservicio-sucursales] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-06-30T21:10:48.170-04:00  WARN 13628 --- [microservicio-sucursales] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-06-30T21:10:48.171-04:00  WARN 13628 --- [microservicio-sucursales] [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
-2025-06-30T21:10:48.190-04:00  INFO 13628 --- [microservicio-sucursales] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+2025-07-01T21:09:03.994-04:00  INFO 27572 --- [microservicio-sucursales] [restartedMain] p.c.m.MicroservicioSucursalesApplication : Starting MicroservicioSucursalesApplication using Java 21.0.5 with PID 27572 (C:\Users\lucia\Downloads\unitTestingSucursales\nonstack_sucursales-back-1\target\classes started by lucia in C:\Users\lucia\Downloads\unitTestingSucursales\nonstack_sucursales-back-1)
+2025-07-01T21:09:03.998-04:00  INFO 27572 --- [microservicio-sucursales] [restartedMain] p.c.m.MicroservicioSucursalesApplication : No active profile set, falling back to 1 default profile: "default"
+2025-07-01T21:09:04.044-04:00  INFO 27572 --- [microservicio-sucursales] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-07-01T21:09:04.045-04:00  INFO 27572 --- [microservicio-sucursales] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-07-01T21:09:05.361-04:00  INFO 27572 --- [microservicio-sucursales] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-01T21:09:05.412-04:00  INFO 27572 --- [microservicio-sucursales] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 42 ms. Found 3 JPA repository interfaces.
+2025-07-01T21:09:06.469-04:00  INFO 27572 --- [microservicio-sucursales] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-07-01T21:09:06.496-04:00  INFO 27572 --- [microservicio-sucursales] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-07-01T21:09:06.497-04:00  INFO 27572 --- [microservicio-sucursales] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.40]
+2025-07-01T21:09:06.551-04:00  INFO 27572 --- [microservicio-sucursales] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-07-01T21:09:06.552-04:00  INFO 27572 --- [microservicio-sucursales] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2506 ms
+2025-07-01T21:09:07.067-04:00  INFO 27572 --- [microservicio-sucursales] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-07-01T21:09:07.135-04:00  INFO 27572 --- [microservicio-sucursales] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.13.Final
+2025-07-01T21:09:07.166-04:00  INFO 27572 --- [microservicio-sucursales] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-07-01T21:09:07.420-04:00  INFO 27572 --- [microservicio-sucursales] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-07-01T21:09:07.446-04:00  INFO 27572 --- [microservicio-sucursales] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-07-01T21:09:09.216-04:00  INFO 27572 --- [microservicio-sucursales] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1df9c352
+2025-07-01T21:09:09.218-04:00  INFO 27572 --- [microservicio-sucursales] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-07-01T21:09:09.475-04:00  WARN 27572 --- [microservicio-sucursales] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-01T21:09:09.476-04:00  WARN 27572 --- [microservicio-sucursales] [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-07-01T21:09:09.489-04:00  INFO 27572 --- [microservicio-sucursales] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
 	Database driver: undefined/unknown
 	Database version: 8.0
@@ -19,398 +26,21 @@
 	Isolation level: undefined/unknown
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2025-06-30T21:10:48.931-04:00  INFO 13628 --- [microservicio-sucursales] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-06-30T21:10:48.934-04:00  INFO 13628 --- [microservicio-sucursales] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-06-30T21:10:49.216-04:00  INFO 16284 --- [microservicio-sucursales] [main] .MicroservicioSucursalesApplicationTests : Starting MicroservicioSucursalesApplicationTests using Java 21.0.5 with PID 16284 (started by lucia in C:\Users\lucia\Downloads\unitTestingSucursales\nonstack_sucursales-back-1)
-2025-06-30T21:10:49.220-04:00  INFO 16284 --- [microservicio-sucursales] [main] .MicroservicioSucursalesApplicationTests : No active profile set, falling back to 1 default profile: "default"
-2025-06-30T21:10:49.391-04:00  INFO 13628 --- [microservicio-sucursales] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2025-06-30T21:10:50.800-04:00  INFO 16284 --- [microservicio-sucursales] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-06-30T21:10:50.878-04:00  INFO 16284 --- [microservicio-sucursales] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 62 ms. Found 3 JPA repository interfaces.
-2025-06-30T21:10:51.108-04:00  WARN 13628 --- [microservicio-sucursales] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-06-30T21:10:51.673-04:00  INFO 13628 --- [microservicio-sucursales] [main] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
-2025-06-30T21:10:52.088-04:00  INFO 16284 --- [microservicio-sucursales] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-06-30T21:10:52.207-04:00  INFO 16284 --- [microservicio-sucursales] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.13.Final
-2025-06-30T21:10:52.309-04:00  INFO 16284 --- [microservicio-sucursales] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-06-30T21:10:52.862-04:00  INFO 16284 --- [microservicio-sucursales] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-06-30T21:10:52.918-04:00  INFO 16284 --- [microservicio-sucursales] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-06-30T21:10:53.913-04:00  INFO 13628 --- [microservicio-sucursales] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
-2025-06-30T21:10:54.230-04:00  INFO 13628 --- [microservicio-sucursales] [main] .MicroservicioSucursalesApplicationTests : Started MicroservicioSucursalesApplicationTests in 11.101 seconds (process running for 11.856)
-2025-06-30T21:10:54.749-04:00  INFO 16284 --- [microservicio-sucursales] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@792ae10d
-2025-06-30T21:10:54.751-04:00  INFO 16284 --- [microservicio-sucursales] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-06-30T21:10:54.950-04:00  WARN 16284 --- [microservicio-sucursales] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-06-30T21:10:54.953-04:00  WARN 16284 --- [microservicio-sucursales] [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
-2025-06-30T21:10:54.972-04:00  INFO 16284 --- [microservicio-sucursales] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
-	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
-	Database driver: undefined/unknown
-	Database version: 8.0
-	Autocommit mode: undefined/unknown
-	Isolation level: undefined/unknown
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2025-06-30T21:10:55.128-04:00  INFO 13628 --- [microservicio-sucursales] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-06-30T21:10:55.132-04:00  INFO 13628 --- [microservicio-sucursales] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-06-30T21:10:56.086-04:00  INFO 13628 --- [microservicio-sucursales] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2025-06-30T21:10:57.964-04:00  INFO 16284 --- [microservicio-sucursales] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-06-30T21:10:57.973-04:00  INFO 16284 --- [microservicio-sucursales] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-06-30T21:10:59.328-04:00  INFO 16284 --- [microservicio-sucursales] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2025-06-30T21:11:03.376-04:00  WARN 16284 --- [microservicio-sucursales] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-06-30T21:11:04.163-04:00  INFO 16284 --- [microservicio-sucursales] [main] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
-2025-06-30T21:11:08.037-04:00  INFO 16284 --- [microservicio-sucursales] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
-2025-06-30T21:11:08.379-04:00  INFO 16284 --- [microservicio-sucursales] [main] .MicroservicioSucursalesApplicationTests : Started MicroservicioSucursalesApplicationTests in 19.636 seconds (process running for 21.33)
-2025-06-30T21:11:09.726-04:00  INFO 16284 --- [microservicio-sucursales] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-06-30T21:11:09.733-04:00  INFO 16284 --- [microservicio-sucursales] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-06-30T21:11:11.108-04:00  INFO 16284 --- [microservicio-sucursales] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2025-06-30T21:13:38.013-04:00  INFO 29292 --- [microservicio-sucursales] [main] c.p.c.m.controller.CiudadControllerTest  : Starting CiudadControllerTest using Java 21.0.5 with PID 29292 (started by lucia in C:\Users\lucia\Downloads\unitTestingSucursales\nonstack_sucursales-back-1)
-2025-06-30T21:13:38.014-04:00  INFO 29292 --- [microservicio-sucursales] [main] c.p.c.m.controller.CiudadControllerTest  : The following 1 profile is active: "test"
-2025-06-30T21:13:39.067-04:00  INFO 29292 --- [microservicio-sucursales] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-06-30T21:13:39.113-04:00  INFO 29292 --- [microservicio-sucursales] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 38 ms. Found 3 JPA repository interfaces.
-2025-06-30T21:13:41.302-04:00  INFO 29292 --- [microservicio-sucursales] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-06-30T21:13:41.402-04:00  INFO 29292 --- [microservicio-sucursales] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.13.Final
-2025-06-30T21:13:41.431-04:00  INFO 29292 --- [microservicio-sucursales] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-06-30T21:13:41.529-04:00  INFO 29292 --- [microservicio-sucursales] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-06-30T21:13:41.554-04:00  INFO 29292 --- [microservicio-sucursales] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-06-30T21:13:43.350-04:00  INFO 29292 --- [microservicio-sucursales] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@68f1b89
-2025-06-30T21:13:43.351-04:00  INFO 29292 --- [microservicio-sucursales] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-06-30T21:13:43.521-04:00  WARN 29292 --- [microservicio-sucursales] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-06-30T21:13:43.521-04:00  WARN 29292 --- [microservicio-sucursales] [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
-2025-06-30T21:13:43.537-04:00  INFO 29292 --- [microservicio-sucursales] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
-	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
-	Database driver: undefined/unknown
-	Database version: 8.0
-	Autocommit mode: undefined/unknown
-	Isolation level: undefined/unknown
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2025-06-30T21:13:44.101-04:00  INFO 29292 --- [microservicio-sucursales] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-06-30T21:13:44.103-04:00  INFO 29292 --- [microservicio-sucursales] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-06-30T21:13:44.704-04:00  INFO 29292 --- [microservicio-sucursales] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2025-06-30T21:13:45.626-04:00  WARN 29292 --- [microservicio-sucursales] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-06-30T21:13:45.853-04:00  INFO 29292 --- [microservicio-sucursales] [main] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
-2025-06-30T21:13:46.761-04:00  INFO 29292 --- [microservicio-sucursales] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
-2025-06-30T21:13:46.813-04:00  INFO 29292 --- [microservicio-sucursales] [main] c.p.c.m.controller.CiudadControllerTest  : Started CiudadControllerTest in 9.095 seconds (process running for 9.878)
-2025-06-30T21:13:46.907-04:00  INFO 29292 --- [microservicio-sucursales] [main] c.p.c.m.controller.CiudadControllerTest  : Iniciando testListarCiudades
-2025-06-30T21:13:46.949-04:00  INFO 29292 --- [microservicio-sucursales] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-06-30T21:13:46.954-04:00  INFO 29292 --- [microservicio-sucursales] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-06-30T21:13:47.512-04:00  INFO 29292 --- [microservicio-sucursales] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2025-06-30T21:18:15.268-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] p.c.m.MicroservicioSucursalesApplication : Starting MicroservicioSucursalesApplication using Java 21.0.5 with PID 11908 (C:\Users\lucia\Downloads\unitTestingSucursales\nonstack_sucursales-back-1\target\classes started by lucia in C:\Users\lucia\Downloads\unitTestingSucursales\nonstack_sucursales-back-1)
-2025-06-30T21:18:15.271-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] p.c.m.MicroservicioSucursalesApplication : No active profile set, falling back to 1 default profile: "default"
-2025-06-30T21:18:15.314-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2025-06-30T21:18:15.316-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2025-06-30T21:18:16.571-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-06-30T21:18:16.616-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 37 ms. Found 3 JPA repository interfaces.
-2025-06-30T21:18:17.562-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2025-06-30T21:18:17.587-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-06-30T21:18:17.587-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.40]
-2025-06-30T21:18:17.640-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-06-30T21:18:17.640-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2324 ms
-2025-06-30T21:18:18.210-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-06-30T21:18:18.245-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.13.Final
-2025-06-30T21:18:18.266-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-06-30T21:18:18.539-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-06-30T21:18:18.559-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-06-30T21:18:20.277-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@637b07f0
-2025-06-30T21:18:20.279-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-06-30T21:18:20.445-04:00  WARN 11908 --- [microservicio-sucursales] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-06-30T21:18:20.446-04:00  WARN 11908 --- [microservicio-sucursales] [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
-2025-06-30T21:18:20.459-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
-	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
-	Database driver: undefined/unknown
-	Database version: 8.0
-	Autocommit mode: undefined/unknown
-	Isolation level: undefined/unknown
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2025-06-30T21:18:21.092-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-06-30T21:18:21.096-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-06-30T21:18:21.393-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2025-06-30T21:18:22.360-04:00  WARN 11908 --- [microservicio-sucursales] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-06-30T21:18:22.633-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
-2025-06-30T21:18:23.608-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2025-06-30T21:18:23.616-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
-2025-06-30T21:18:23.692-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2025-06-30T21:18:23.707-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] p.c.m.MicroservicioSucursalesApplication : Started MicroservicioSucursalesApplication in 8.937 seconds (process running for 9.456)
-2025-06-30T21:18:24.152-04:00  INFO 11908 --- [microservicio-sucursales] [RMI TCP Connection(3)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-06-30T21:18:24.154-04:00  INFO 11908 --- [microservicio-sucursales] [RMI TCP Connection(3)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-06-30T21:18:24.155-04:00  INFO 11908 --- [microservicio-sucursales] [RMI TCP Connection(3)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
-2025-06-30T21:20:28.118-04:00  INFO 11908 --- [microservicio-sucursales] [http-nio-8080-exec-8] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 1270 ms
-2025-06-30T22:13:51.813-04:00  WARN 11908 --- [microservicio-sucursales] [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2m30s796ms127µs900ns).
-2025-06-30T22:20:27.097-04:00  INFO 11908 --- [microservicio-sucursales] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
-2025-06-30T22:20:27.114-04:00  INFO 11908 --- [microservicio-sucursales] [Thread-5] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2025-06-30T22:20:27.125-04:00  INFO 11908 --- [microservicio-sucursales] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2025-06-30T22:20:27.135-04:00  INFO 11908 --- [microservicio-sucursales] [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-06-30T22:20:27.146-04:00  INFO 11908 --- [microservicio-sucursales] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-06-30T22:20:28.523-04:00  INFO 11908 --- [microservicio-sucursales] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2025-06-30T22:20:28.652-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] p.c.m.MicroservicioSucursalesApplication : Starting MicroservicioSucursalesApplication using Java 21.0.5 with PID 11908 (C:\Users\lucia\Downloads\unitTestingSucursales\nonstack_sucursales-back-1\target\classes started by lucia in C:\Users\lucia\Downloads\unitTestingSucursales\nonstack_sucursales-back-1)
-2025-06-30T22:20:28.653-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] p.c.m.MicroservicioSucursalesApplication : No active profile set, falling back to 1 default profile: "default"
-2025-06-30T22:20:28.896-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-06-30T22:20:28.907-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10 ms. Found 3 JPA repository interfaces.
-2025-06-30T22:20:29.027-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2025-06-30T22:20:29.028-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-06-30T22:20:29.028-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.40]
-2025-06-30T22:20:29.041-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-06-30T22:20:29.041-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 386 ms
-2025-06-30T22:20:29.136-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-06-30T22:20:29.137-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-06-30T22:20:29.144-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-06-30T22:20:29.145-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
-2025-06-30T22:20:30.748-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@93aac67
-2025-06-30T22:20:30.749-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
-2025-06-30T22:20:30.750-04:00  WARN 11908 --- [microservicio-sucursales] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-06-30T22:20:30.750-04:00  WARN 11908 --- [microservicio-sucursales] [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
-2025-06-30T22:20:30.751-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
-	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-2)']
-	Database driver: undefined/unknown
-	Database version: 8.0
-	Autocommit mode: undefined/unknown
-	Isolation level: undefined/unknown
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2025-06-30T22:20:30.788-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-06-30T22:20:30.789-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-06-30T22:20:30.911-04:00  WARN 11908 --- [microservicio-sucursales] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-06-30T22:20:30.960-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
-2025-06-30T22:20:31.150-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2025-06-30T22:20:31.155-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
-2025-06-30T22:20:31.172-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2025-06-30T22:20:31.177-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] p.c.m.MicroservicioSucursalesApplication : Started MicroservicioSucursalesApplication in 2.551 seconds (process running for 3737.09)
-2025-06-30T22:20:31.179-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
-2025-06-30T22:20:33.597-04:00  INFO 11908 --- [microservicio-sucursales] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
-2025-06-30T22:20:33.597-04:00  INFO 11908 --- [microservicio-sucursales] [Thread-7] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2025-06-30T22:20:33.597-04:00  INFO 11908 --- [microservicio-sucursales] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2025-06-30T22:20:33.605-04:00  INFO 11908 --- [microservicio-sucursales] [Thread-7] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-06-30T22:20:33.607-04:00  INFO 11908 --- [microservicio-sucursales] [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
-2025-06-30T22:20:34.823-04:00  INFO 11908 --- [microservicio-sucursales] [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
-2025-06-30T22:20:34.898-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] p.c.m.MicroservicioSucursalesApplication : Starting MicroservicioSucursalesApplication using Java 21.0.5 with PID 11908 (C:\Users\lucia\Downloads\unitTestingSucursales\nonstack_sucursales-back-1\target\classes started by lucia in C:\Users\lucia\Downloads\unitTestingSucursales\nonstack_sucursales-back-1)
-2025-06-30T22:20:34.899-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] p.c.m.MicroservicioSucursalesApplication : No active profile set, falling back to 1 default profile: "default"
-2025-06-30T22:20:35.093-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-06-30T22:20:35.106-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10 ms. Found 3 JPA repository interfaces.
-2025-06-30T22:20:35.187-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2025-06-30T22:20:35.187-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-06-30T22:20:35.187-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.40]
-2025-06-30T22:20:35.197-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-06-30T22:20:35.197-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 297 ms
-2025-06-30T22:20:35.266-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-06-30T22:20:35.271-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-06-30T22:20:35.274-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-06-30T22:20:35.274-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
-2025-06-30T22:20:38.276-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5b4be0e2
-2025-06-30T22:20:38.277-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
-2025-06-30T22:20:38.278-04:00  WARN 11908 --- [microservicio-sucursales] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-06-30T22:20:38.278-04:00  WARN 11908 --- [microservicio-sucursales] [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
-2025-06-30T22:20:38.279-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
-	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-3)']
-	Database driver: undefined/unknown
-	Database version: 8.0
-	Autocommit mode: undefined/unknown
-	Isolation level: undefined/unknown
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2025-06-30T22:20:38.311-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-06-30T22:20:38.311-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-06-30T22:20:38.435-04:00  WARN 11908 --- [microservicio-sucursales] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-06-30T22:20:38.485-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
-2025-06-30T22:20:38.656-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2025-06-30T22:20:38.660-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
-2025-06-30T22:20:38.676-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2025-06-30T22:20:38.679-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] p.c.m.MicroservicioSucursalesApplication : Started MicroservicioSucursalesApplication in 3.798 seconds (process running for 3744.591)
-2025-06-30T22:20:38.680-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
-2025-06-30T22:21:21.738-04:00  INFO 11908 --- [microservicio-sucursales] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
-2025-06-30T22:21:21.739-04:00  INFO 11908 --- [microservicio-sucursales] [Thread-11] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2025-06-30T22:21:21.744-04:00  INFO 11908 --- [microservicio-sucursales] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2025-06-30T22:21:21.746-04:00  INFO 11908 --- [microservicio-sucursales] [Thread-11] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-06-30T22:21:21.747-04:00  INFO 11908 --- [microservicio-sucursales] [Thread-11] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
-2025-06-30T22:21:23.113-04:00  INFO 11908 --- [microservicio-sucursales] [Thread-11] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
-2025-06-30T22:21:23.179-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] p.c.m.MicroservicioSucursalesApplication : Starting MicroservicioSucursalesApplication using Java 21.0.5 with PID 11908 (C:\Users\lucia\Downloads\unitTestingSucursales\nonstack_sucursales-back-1\target\classes started by lucia in C:\Users\lucia\Downloads\unitTestingSucursales\nonstack_sucursales-back-1)
-2025-06-30T22:21:23.179-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] p.c.m.MicroservicioSucursalesApplication : No active profile set, falling back to 1 default profile: "default"
-2025-06-30T22:21:23.357-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-06-30T22:21:23.371-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 13 ms. Found 3 JPA repository interfaces.
-2025-06-30T22:21:23.453-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2025-06-30T22:21:23.454-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-06-30T22:21:23.454-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.40]
-2025-06-30T22:21:23.464-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-06-30T22:21:23.464-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 284 ms
-2025-06-30T22:21:23.538-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-06-30T22:21:23.538-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-06-30T22:21:23.544-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-06-30T22:21:23.544-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Starting...
-2025-06-30T22:21:25.131-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-4 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3108fc2
-2025-06-30T22:21:25.132-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Start completed.
-2025-06-30T22:21:25.134-04:00  WARN 11908 --- [microservicio-sucursales] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-06-30T22:21:25.134-04:00  WARN 11908 --- [microservicio-sucursales] [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
-2025-06-30T22:21:25.135-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
-	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-4)']
-	Database driver: undefined/unknown
-	Database version: 8.0
-	Autocommit mode: undefined/unknown
-	Isolation level: undefined/unknown
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2025-06-30T22:21:25.179-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-06-30T22:21:25.179-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-06-30T22:21:25.285-04:00  WARN 11908 --- [microservicio-sucursales] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-06-30T22:21:25.337-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
-2025-06-30T22:21:25.490-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2025-06-30T22:21:25.490-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
-2025-06-30T22:21:25.511-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2025-06-30T22:21:25.515-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] p.c.m.MicroservicioSucursalesApplication : Started MicroservicioSucursalesApplication in 2.352 seconds (process running for 3791.428)
-2025-06-30T22:21:25.517-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
-2025-06-30T22:21:31.006-04:00  INFO 11908 --- [microservicio-sucursales] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
-2025-06-30T22:21:31.006-04:00  INFO 11908 --- [microservicio-sucursales] [Thread-15] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2025-06-30T22:21:31.006-04:00  INFO 11908 --- [microservicio-sucursales] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2025-06-30T22:21:31.014-04:00  INFO 11908 --- [microservicio-sucursales] [Thread-15] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-06-30T22:21:31.014-04:00  INFO 11908 --- [microservicio-sucursales] [Thread-15] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown initiated...
-2025-06-30T22:21:31.846-04:00  INFO 11908 --- [microservicio-sucursales] [Thread-15] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown completed.
-2025-06-30T22:21:31.913-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] p.c.m.MicroservicioSucursalesApplication : Starting MicroservicioSucursalesApplication using Java 21.0.5 with PID 11908 (C:\Users\lucia\Downloads\unitTestingSucursales\nonstack_sucursales-back-1\target\classes started by lucia in C:\Users\lucia\Downloads\unitTestingSucursales\nonstack_sucursales-back-1)
-2025-06-30T22:21:31.914-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] p.c.m.MicroservicioSucursalesApplication : No active profile set, falling back to 1 default profile: "default"
-2025-06-30T22:21:32.066-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-06-30T22:21:32.073-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 3 JPA repository interfaces.
-2025-06-30T22:21:32.149-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2025-06-30T22:21:32.151-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-06-30T22:21:32.151-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.40]
-2025-06-30T22:21:32.160-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-06-30T22:21:32.161-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 246 ms
-2025-06-30T22:21:32.212-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-06-30T22:21:32.213-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-06-30T22:21:32.219-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-06-30T22:21:32.220-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Starting...
-2025-06-30T22:21:33.739-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-5 - Added connection com.mysql.cj.jdbc.ConnectionImpl@b4c60dd
-2025-06-30T22:21:33.740-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Start completed.
-2025-06-30T22:21:33.741-04:00  WARN 11908 --- [microservicio-sucursales] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-06-30T22:21:33.741-04:00  WARN 11908 --- [microservicio-sucursales] [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
-2025-06-30T22:21:33.741-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
-	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-5)']
-	Database driver: undefined/unknown
-	Database version: 8.0
-	Autocommit mode: undefined/unknown
-	Isolation level: undefined/unknown
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2025-06-30T22:21:33.792-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-06-30T22:21:33.792-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-06-30T22:21:33.899-04:00  WARN 11908 --- [microservicio-sucursales] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-06-30T22:21:33.957-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
-2025-06-30T22:21:34.148-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2025-06-30T22:21:34.151-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
-2025-06-30T22:21:34.164-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2025-06-30T22:21:34.166-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] p.c.m.MicroservicioSucursalesApplication : Started MicroservicioSucursalesApplication in 2.27 seconds (process running for 3800.08)
-2025-06-30T22:21:34.168-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
-2025-06-30T22:22:11.091-04:00  INFO 11908 --- [microservicio-sucursales] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
-2025-06-30T22:22:11.093-04:00  INFO 11908 --- [microservicio-sucursales] [Thread-19] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2025-06-30T22:22:11.098-04:00  INFO 11908 --- [microservicio-sucursales] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2025-06-30T22:22:11.100-04:00  INFO 11908 --- [microservicio-sucursales] [Thread-19] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-06-30T22:22:11.101-04:00  INFO 11908 --- [microservicio-sucursales] [Thread-19] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown initiated...
-2025-06-30T22:22:12.461-04:00  INFO 11908 --- [microservicio-sucursales] [Thread-19] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown completed.
-2025-06-30T22:22:12.527-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] p.c.m.MicroservicioSucursalesApplication : Starting MicroservicioSucursalesApplication using Java 21.0.5 with PID 11908 (C:\Users\lucia\Downloads\unitTestingSucursales\nonstack_sucursales-back-1\target\classes started by lucia in C:\Users\lucia\Downloads\unitTestingSucursales\nonstack_sucursales-back-1)
-2025-06-30T22:22:12.528-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] p.c.m.MicroservicioSucursalesApplication : No active profile set, falling back to 1 default profile: "default"
-2025-06-30T22:22:12.688-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-06-30T22:22:12.698-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9 ms. Found 3 JPA repository interfaces.
-2025-06-30T22:22:12.762-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2025-06-30T22:22:12.763-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-06-30T22:22:12.763-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.40]
-2025-06-30T22:22:12.774-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-06-30T22:22:12.774-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 245 ms
-2025-06-30T22:22:12.839-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-06-30T22:22:12.842-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-06-30T22:22:12.855-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-06-30T22:22:12.856-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Starting...
-2025-06-30T22:22:14.372-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-6 - Added connection com.mysql.cj.jdbc.ConnectionImpl@45701dc7
-2025-06-30T22:22:14.372-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Start completed.
-2025-06-30T22:22:14.373-04:00  WARN 11908 --- [microservicio-sucursales] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-06-30T22:22:14.373-04:00  WARN 11908 --- [microservicio-sucursales] [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
-2025-06-30T22:22:14.374-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
-	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-6)']
-	Database driver: undefined/unknown
-	Database version: 8.0
-	Autocommit mode: undefined/unknown
-	Isolation level: undefined/unknown
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2025-06-30T22:22:14.406-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-06-30T22:22:14.407-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-06-30T22:22:14.517-04:00  WARN 11908 --- [microservicio-sucursales] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-06-30T22:22:14.556-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
-2025-06-30T22:22:14.710-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2025-06-30T22:22:14.712-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
-2025-06-30T22:22:14.726-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2025-06-30T22:22:14.728-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] p.c.m.MicroservicioSucursalesApplication : Started MicroservicioSucursalesApplication in 2.214 seconds (process running for 3840.642)
-2025-06-30T22:22:14.729-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
-2025-06-30T22:22:25.280-04:00  INFO 11908 --- [microservicio-sucursales] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
-2025-06-30T22:22:25.282-04:00  INFO 11908 --- [microservicio-sucursales] [Thread-23] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2025-06-30T22:22:25.286-04:00  INFO 11908 --- [microservicio-sucursales] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2025-06-30T22:22:25.287-04:00  INFO 11908 --- [microservicio-sucursales] [Thread-23] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-06-30T22:22:25.287-04:00  INFO 11908 --- [microservicio-sucursales] [Thread-23] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown initiated...
-2025-06-30T22:22:26.656-04:00  INFO 11908 --- [microservicio-sucursales] [Thread-23] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown completed.
-2025-06-30T22:22:26.726-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] p.c.m.MicroservicioSucursalesApplication : Starting MicroservicioSucursalesApplication using Java 21.0.5 with PID 11908 (C:\Users\lucia\Downloads\unitTestingSucursales\nonstack_sucursales-back-1\target\classes started by lucia in C:\Users\lucia\Downloads\unitTestingSucursales\nonstack_sucursales-back-1)
-2025-06-30T22:22:26.726-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] p.c.m.MicroservicioSucursalesApplication : No active profile set, falling back to 1 default profile: "default"
-2025-06-30T22:22:26.873-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-06-30T22:22:26.882-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 3 JPA repository interfaces.
-2025-06-30T22:22:26.955-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2025-06-30T22:22:26.955-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-06-30T22:22:26.956-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.40]
-2025-06-30T22:22:26.966-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-06-30T22:22:26.966-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 238 ms
-2025-06-30T22:22:27.026-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-06-30T22:22:27.028-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-06-30T22:22:27.045-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-06-30T22:22:27.046-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Starting...
-2025-06-30T22:22:28.539-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-7 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2f8212
-2025-06-30T22:22:28.540-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Start completed.
-2025-06-30T22:22:28.540-04:00  WARN 11908 --- [microservicio-sucursales] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-06-30T22:22:28.541-04:00  WARN 11908 --- [microservicio-sucursales] [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
-2025-06-30T22:22:28.541-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
-	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-7)']
-	Database driver: undefined/unknown
-	Database version: 8.0
-	Autocommit mode: undefined/unknown
-	Isolation level: undefined/unknown
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2025-06-30T22:22:28.571-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-06-30T22:22:28.571-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-06-30T22:22:28.670-04:00  WARN 11908 --- [microservicio-sucursales] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-06-30T22:22:28.713-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
-2025-06-30T22:22:28.863-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2025-06-30T22:22:28.865-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
-2025-06-30T22:22:28.878-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2025-06-30T22:22:28.881-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] p.c.m.MicroservicioSucursalesApplication : Started MicroservicioSucursalesApplication in 2.17 seconds (process running for 3854.794)
-2025-06-30T22:22:28.882-04:00  INFO 11908 --- [microservicio-sucursales] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
-2025-06-30T22:23:24.351-04:00  INFO 12580 --- [microservicio-sucursales] [restartedMain] p.c.m.MicroservicioSucursalesApplication : Starting MicroservicioSucursalesApplication using Java 21.0.5 with PID 12580 (C:\Users\lucia\Downloads\unitTestingSucursales\nonstack_sucursales-back-1\target\classes started by lucia in C:\Users\lucia\Downloads\unitTestingSucursales\nonstack_sucursales-back-1)
-2025-06-30T22:23:24.351-04:00  INFO 12580 --- [microservicio-sucursales] [restartedMain] p.c.m.MicroservicioSucursalesApplication : No active profile set, falling back to 1 default profile: "default"
-2025-06-30T22:23:24.393-04:00  INFO 12580 --- [microservicio-sucursales] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2025-06-30T22:23:24.393-04:00  INFO 12580 --- [microservicio-sucursales] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2025-06-30T22:23:25.496-04:00  INFO 12580 --- [microservicio-sucursales] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-06-30T22:23:25.544-04:00  INFO 12580 --- [microservicio-sucursales] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 38 ms. Found 3 JPA repository interfaces.
-2025-06-30T22:23:26.405-04:00  INFO 12580 --- [microservicio-sucursales] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2025-06-30T22:23:26.429-04:00  INFO 12580 --- [microservicio-sucursales] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-06-30T22:23:26.430-04:00  INFO 12580 --- [microservicio-sucursales] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.40]
-2025-06-30T22:23:26.478-04:00  INFO 12580 --- [microservicio-sucursales] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-06-30T22:23:26.478-04:00  INFO 12580 --- [microservicio-sucursales] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2085 ms
-2025-06-30T22:23:26.883-04:00  INFO 12580 --- [microservicio-sucursales] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-06-30T22:23:26.913-04:00  INFO 12580 --- [microservicio-sucursales] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.13.Final
-2025-06-30T22:23:26.936-04:00  INFO 12580 --- [microservicio-sucursales] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-06-30T22:23:27.253-04:00  INFO 12580 --- [microservicio-sucursales] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-06-30T22:23:27.271-04:00  INFO 12580 --- [microservicio-sucursales] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-06-30T22:23:28.982-04:00  INFO 12580 --- [microservicio-sucursales] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@26ac8afb
-2025-06-30T22:23:28.986-04:00  INFO 12580 --- [microservicio-sucursales] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-06-30T22:23:29.180-04:00  WARN 12580 --- [microservicio-sucursales] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-06-30T22:23:29.180-04:00  WARN 12580 --- [microservicio-sucursales] [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
-2025-06-30T22:23:29.194-04:00  INFO 12580 --- [microservicio-sucursales] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
-	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
-	Database driver: undefined/unknown
-	Database version: 8.0
-	Autocommit mode: undefined/unknown
-	Isolation level: undefined/unknown
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2025-06-30T22:23:29.745-04:00  INFO 12580 --- [microservicio-sucursales] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-06-30T22:23:29.747-04:00  INFO 12580 --- [microservicio-sucursales] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-06-30T22:23:30.077-04:00  INFO 12580 --- [microservicio-sucursales] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2025-06-30T22:23:30.974-04:00  WARN 12580 --- [microservicio-sucursales] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-06-30T22:23:31.242-04:00  INFO 12580 --- [microservicio-sucursales] [restartedMain] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
-2025-06-30T22:23:32.060-04:00  INFO 12580 --- [microservicio-sucursales] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2025-06-30T22:23:32.071-04:00  INFO 12580 --- [microservicio-sucursales] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
-2025-06-30T22:23:32.149-04:00  INFO 12580 --- [microservicio-sucursales] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2025-06-30T22:23:32.162-04:00  INFO 12580 --- [microservicio-sucursales] [restartedMain] p.c.m.MicroservicioSucursalesApplication : Started MicroservicioSucursalesApplication in 8.291 seconds (process running for 8.76)
-2025-06-30T22:23:33.246-04:00  INFO 12580 --- [microservicio-sucursales] [RMI TCP Connection(2)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-06-30T22:23:33.252-04:00  INFO 12580 --- [microservicio-sucursales] [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-06-30T22:23:33.253-04:00  INFO 12580 --- [microservicio-sucursales] [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-07-01T21:09:10.189-04:00  INFO 27572 --- [microservicio-sucursales] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-07-01T21:09:10.192-04:00  INFO 27572 --- [microservicio-sucursales] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-07-01T21:09:10.619-04:00  INFO 27572 --- [microservicio-sucursales] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-07-01T21:09:11.643-04:00  WARN 27572 --- [microservicio-sucursales] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-01T21:09:11.914-04:00  INFO 27572 --- [microservicio-sucursales] [restartedMain] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-07-01T21:09:12.741-04:00  INFO 27572 --- [microservicio-sucursales] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-07-01T21:09:12.748-04:00  INFO 27572 --- [microservicio-sucursales] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-07-01T21:09:12.853-04:00  INFO 27572 --- [microservicio-sucursales] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-07-01T21:09:12.874-04:00  INFO 27572 --- [microservicio-sucursales] [restartedMain] p.c.m.MicroservicioSucursalesApplication : Started MicroservicioSucursalesApplication in 9.356 seconds (process running for 9.851)
+2025-07-01T21:09:12.911-04:00  INFO 27572 --- [microservicio-sucursales] [RMI TCP Connection(2)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-07-01T21:09:12.911-04:00  INFO 27572 --- [microservicio-sucursales] [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-07-01T21:09:12.912-04:00  INFO 27572 --- [microservicio-sucursales] [RMI TCP Connection(2)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-07-01T21:13:30.456-04:00  WARN 27572 --- [microservicio-sucursales] [http-nio-8080-exec-8] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public org.springframework.http.ResponseEntity<com.perfulandia.cl.microservicio_sucursales.model.Sucursal> com.perfulandia.cl.microservicio_sucursales.controller.SucursalController.crearSucursal(com.perfulandia.cl.microservicio_sucursales.model.Sucursal)]
+2025-07-01T21:13:37.562-04:00  WARN 27572 --- [microservicio-sucursales] [http-nio-8080-exec-10] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' is not supported]
+2025-07-01T21:18:14.770-04:00  WARN 27572 --- [microservicio-sucursales] [http-nio-8080-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public org.springframework.http.ResponseEntity<org.springframework.hateoas.EntityModel<com.perfulandia.cl.microservicio_sucursales.model.Sucursal>> com.perfulandia.cl.microservicio_sucursales.controller.SucursalControllerV2.crearSucursal(com.perfulandia.cl.microservicio_sucursales.model.Sucursal)]
+2025-07-01T21:18:19.301-04:00  WARN 27572 --- [microservicio-sucursales] [http-nio-8080-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: Required request body is missing: public org.springframework.http.ResponseEntity<org.springframework.hateoas.EntityModel<com.perfulandia.cl.microservicio_sucursales.model.Sucursal>> com.perfulandia.cl.microservicio_sucursales.controller.SucursalControllerV2.crearSucursal(com.perfulandia.cl.microservicio_sucursales.model.Sucursal)]
+2025-07-01T21:41:01.829-04:00  WARN 27572 --- [microservicio-sucursales] [http-nio-8080-exec-3] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' is not supported]
+2025-07-01T23:48:27.468-04:00  WARN 27572 --- [microservicio-sucursales] [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h15m16s993ms968µs700ns).
