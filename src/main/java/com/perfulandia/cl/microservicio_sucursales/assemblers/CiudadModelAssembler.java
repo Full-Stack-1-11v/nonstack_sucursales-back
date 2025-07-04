@@ -18,12 +18,18 @@ public class CiudadModelAssembler extends RepresentationModelAssemblerSupport<Ci
 
     @Override
     public EntityModel<Ciudad> toModel(Ciudad ciudad) {
-        return EntityModel.of(ciudad,
-                linkTo(methodOn(CiudadControllerV2.class).obtenerCiudadPorId(ciudad.getIdCiudad())).withSelfRel(),
-                linkTo(methodOn(CiudadControllerV2.class).listarCiudades()).withRel("ciudades"),
-                ciudad.getRegion() != null && ciudad.getRegion().getIdRegion() != null
-                    ? linkTo(methodOn(CiudadControllerV2.class).listarCiudadesPorRegion(ciudad.getRegion().getIdRegion())).withRel("ciudades-por-region")
-                    : null
+        EntityModel<Ciudad> model = EntityModel.of(
+            ciudad,
+            linkTo(methodOn(CiudadControllerV2.class).obtenerCiudadPorId(ciudad.getIdCiudad())).withSelfRel(),
+            linkTo(methodOn(CiudadControllerV2.class).listarCiudades()).withRel("ciudades")
         );
+        if (ciudad.getRegion() != null && ciudad.getRegion().getIdRegion() != null) {
+            model.add(
+                linkTo(methodOn(CiudadControllerV2.class)
+                    .listarCiudadesPorRegion(ciudad.getRegion().getIdRegion()))
+                    .withRel("ciudades-por-region")
+            );
+        }
+        return model;
     }
 }

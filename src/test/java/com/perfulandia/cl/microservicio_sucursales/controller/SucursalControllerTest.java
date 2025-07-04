@@ -93,7 +93,7 @@ public class SucursalControllerTest {
         ResponseEntity<List<Sucursal>> response = sucursalController.listarSucursales();
 
         assertEquals(HttpStatus.OK, response.getStatusCode());
-        assertTrue(response.getBody().isEmpty());
+        assertTrue(response.getBody() != null && response.getBody().isEmpty());
         verify(sucursalService, times(1)).getAllSucursales();
     }
 

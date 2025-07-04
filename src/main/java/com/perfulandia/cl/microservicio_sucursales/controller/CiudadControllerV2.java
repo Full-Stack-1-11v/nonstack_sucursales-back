@@ -38,7 +38,7 @@ public class CiudadControllerV2 {
     @Autowired
     private CiudadService ciudadService;
 
-    @Autowired
+    @Autowired 
     private CiudadModelAssembler ciudadModelAssembler;
 
     @GetMapping("/{idCiudad}")
